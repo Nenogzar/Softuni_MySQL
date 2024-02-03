@@ -18,10 +18,10 @@
 | DISTINCT               | SELECT DISTINCT country FROM users;                                                          | Selects only distinct (different) values                                         |
 | DROP                   | ALTER TABLE users DROP COLUMN salary;                                                        | Deletes a column, constraint, database, index, table, or view                    |
 | GROUP BY               | SELECT COUNT(*) FROM users GROUP BY department_id;                                           | Groups the result set (used with aggregate functions: COUNT, MAX, MIN, SUM, AVG) |
-| HAVING                 | SELECT COUNT(*) FROM users GROUP BY department_id HAVING COUNT(*) > 5;                       | Used instead of WHERE with aggregate functions                                   |
+| HAVING                 | SELECT COUNT(*) FROM users GROUP BY department_id HAVING COUNT(\*) > 5;                      | Used instead of WHERE with aggregate functions                                   |
 | IN                     | SELECT * FROM countries WHERE name IN ('EN', 'BG', 'UK');                                    | Allows you to specify multiple values in a WHERE clause                          |
 | INNER JOIN             | SELECT u.name, d.name FROM users AS u INNER JOIN departments AS d ON u.department_id = d.id; | Returns rows that have matching values in both tables                            |
-| INSERT INTO            | INSERT INTO users(`id`, `name`) VALUES (1, 'Pesh');                                          | Inserts new rows in a table                                                      |
+| INSERT INTO            | INSERT INTO users(\`id\`, \`name\`) VALUES (1, 'Pesh');                                      | Inserts new rows in a table                                                      |
 | IS NULL                | SELECT name FROM users WHERE address IS NULL;                                                | Tests for empty values                                                           |
 | IS NOT NULL            | SELECT name FROM users WHERE address IS NOT NULL;                                            | Tests for non-empty values                                                       |
 | LEFT JOIN              | SELECT u.name, d.name FROM users AS u LEFT JOIN departments AS d ON u.department_id = d.id;  | Returns all rows from the left table, and the matching rows from the right table |
